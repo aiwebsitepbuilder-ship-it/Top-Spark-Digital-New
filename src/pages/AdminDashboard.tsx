@@ -74,11 +74,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigateHome }
       const diagData = await api.getHealth();
       setDiagnostics(diagData);
     } catch (err: unknown) {
-      console.error('Failed to load admin data:', err);
-      const msg = err instanceof Error ? err.message : '';
-      if (msg.includes('401') || msg.includes('Authentication') || msg.includes('Session')) {
-        handleLogout();
-      }
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn('[Admin] Session expired or data unavailable:', msg);
+      handleLogout();
     }
   };
 

@@ -48,27 +48,50 @@ export function resetAttempts(ip: string) {
 }
 
 export function createSession(userId: string, username: string, role: string): string {
-  const token = crypto.randomBytes(32).toString('hex');
+  const expiresAt = Date.now() + SESSION_TTL_MS;
+  const payload = Buffer.from(JSON.stringify({ userId, username, role, expiresAt })).toString('base64url');
+  const signature = crypto.createHmac('sha256', SECRET_KEY).update(payload).digest('hex');
+  const token = `${payload}.${signature}`;
+
   activeSessions.set(token, {
     userId,
     username,
     role,
-    expiresAt: Date.now() + SESSION_TTL_MS,
+    expiresAt,
   });
   return token;
 }
 
 export function verifySession(token: string): SessionData | null {
   if (!token) return null;
-  const session = activeSessions.get(token);
-  if (!session) return null;
 
-  if (Date.now() > session.expiresAt) {
-    activeSessions.delete(token);
-    return null;
+  // 1. Check in-memory active cache
+  const cached = activeSessions.get(token);
+  if (cached) {
+    if (Date.now() > cached.expiresAt) {
+      activeSessions.delete(token);
+      return null;
+    }
+    return cached;
   }
 
-  return session;
+  // 2. Cryptographic fallback (persists across server restarts)
+  try {
+    const parts = token.split('.');
+    if (parts.length !== 2) return null;
+    const [payloadBase64, signature] = parts;
+    const expectedSig = crypto.createHmac('sha256', SECRET_KEY).update(payloadBase64).digest('hex');
+    if (signature !== expectedSig) return null;
+
+    const data = JSON.parse(Buffer.from(payloadBase64, 'base64url').toString('utf-8')) as SessionData;
+    if (Date.now() > data.expiresAt) return null;
+
+    // Cache back in activeSessions
+    activeSessions.set(token, data);
+    return data;
+  } catch {
+    return null;
+  }
 }
 
 export function destroySession(token: string) {
