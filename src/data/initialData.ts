@@ -1,0 +1,403 @@
+import { ContentDatabase } from '../types';
+
+export const initialData: ContentDatabase = {
+  settings: {
+    brandName: 'Top Spark Digital',
+    domain: 'https://topsparkdigital.com/',
+    officeAddress: '131/2 A, Mirpur-1, Dhaka',
+    phone: '+8801674451806',
+    businessEmail: 'info@topsparkdigital.com',
+    primaryPositioning: 'We Turn Businesses Into Digital Brands.',
+    supportingPositioning:
+      'From content and social media to SEO, Google Business Profile and digital solutions — Top Spark helps businesses build, manage and grow their digital presence.',
+    whatsappEnabled: true,
+    blogPubliclyEnabled: false,
+    socials: {
+      facebook: 'https://www.facebook.com/topsparkdigital',
+      linkedin: '',
+      youtube: '',
+      instagram: '',
+    },
+  },
+  clients: [
+    { id: 'client-1', name: 'Aalo', industry: 'Education Technology', sortOrder: 1, published: true },
+    { id: 'client-2', name: 'GrowUp', industry: 'Agro & Investment', sortOrder: 2, published: true },
+    { id: 'client-3', name: 'The Royal Valley', industry: 'Agro Tourism / Real Estate', sortOrder: 3, published: true },
+    { id: 'client-4', name: 'The Law Matter', industry: 'Legal & Professional Services', sortOrder: 4, published: true },
+    { id: 'client-5', name: 'Voice Sending', industry: 'EdTech / Communication SaaS', sortOrder: 5, published: true },
+    { id: 'client-6', name: 'DrWala', industry: 'Healthcare Technology', sortOrder: 6, published: true },
+    { id: 'client-7', name: 'Tech Den', industry: 'Technology Retail', sortOrder: 7, published: true },
+  ],
+  services: [
+    {
+      id: 'srv-1',
+      number: '01',
+      title: 'Social Media Management',
+      slug: 'social-media-management',
+      shortDescription:
+        'Complete end-to-end management of your brand’s social footprint, turning casual viewers into loyal communities.',
+      items: [
+        'Facebook Page Management',
+        'Content Planning & Calendar',
+        'Scheduled Publishing',
+        'Community Management & Inquiries',
+        'Monthly Analytics & Performance Reporting',
+      ],
+      businessNeeds:
+        'Businesses that need consistent, professional social presence without the overhead of hiring an internal 5-person creative team.',
+      ctaText: 'Enquire About Social Management',
+      featuredInHome: true,
+    },
+    {
+      id: 'srv-2',
+      number: '02',
+      title: 'Content Creation',
+      slug: 'content-creation',
+      shortDescription:
+        'High-impact social media assets, educational reels, studio video productions, and conversion-focused copywriting.',
+      items: [
+        'Social Media Content',
+        'Reels & Vertical Short-form Video',
+        'Educational Explainer Videos',
+        'Promotional Brand Videos',
+        'AI-assisted Video Content',
+        'Strategic Copywriting',
+      ],
+      businessNeeds:
+        'Brands that need consistent visual and video assets that communicate authority, clarify complex offers, and drive organic reach.',
+      ctaText: 'Plan Your Content Pipeline',
+      featuredInHome: true,
+    },
+    {
+      id: 'srv-3',
+      number: '03',
+      title: 'Photography & Videography',
+      slug: 'photography-videography',
+      shortDescription:
+        'Professional on-location and studio visual production with cinema-grade cameras, lighting, and audio equipment.',
+      items: [
+        'Product Photography',
+        'Corporate Photography & Leadership Portraits',
+        'Corporate Brand Videos',
+        'Reels & Short-form Production',
+        'Event Coverage',
+        'Commercial Video Production',
+      ],
+      businessNeeds:
+        'Organizations requiring authentic, high-resolution original visual production rather than generic stock footage.',
+      ctaText: 'Book a Production Shoot',
+      featuredInHome: true,
+    },
+    {
+      id: 'srv-4',
+      number: '04',
+      title: 'Google Business Profile',
+      slug: 'google-business-profile',
+      shortDescription:
+        'Establish dominant local search visibility, verified map pins, review acquisition, and continuous local search optimization.',
+      items: [
+        'Google Business Profile Setup & Verification',
+        'Local SEO Profile Optimization',
+        'Review Strategy & Response Handling',
+        'Google Maps Visibility Optimization',
+        'Local Posts & Photo Updates',
+        'Monthly Local Search Management',
+      ],
+      businessNeeds:
+        'Physical businesses, medical practices, retail outlets, and regional offices looking to capture nearby customer searches in Bangladesh.',
+      ctaText: 'Optimize Your Google Profile',
+      featuredInHome: true,
+    },
+    {
+      id: 'srv-5',
+      number: '05',
+      title: 'SEO & AEO',
+      slug: 'seo-aeo',
+      shortDescription:
+        'Search Engine Optimization combined with Answer Engine Optimization to rank on Google and modern AI answer engines.',
+      plainEnglishExplanation:
+        'Helping your business become visible not only on Google, but also across AI-powered search and answer platforms.',
+      items: [
+        'Technical Site SEO Audits',
+        'On-page SEO & Keyword Architecture',
+        'Local Search Optimization',
+        'Content Strategy & Semantic Clustering',
+        'Answer Engine Optimization (AEO)',
+        'AI Search Visibility (Perplexity, Gemini, ChatGPT Search)',
+      ],
+      businessNeeds:
+        'Businesses seeking enduring organic discovery that remains resilient as customer search shifts toward AI assistants.',
+      ctaText: 'Improve Your Search & AI Visibility',
+      featuredInHome: true,
+    },
+    {
+      id: 'srv-6',
+      number: '06',
+      title: 'Digital Solutions',
+      slug: 'digital-solutions',
+      shortDescription:
+        'Bespoke digital tools, high-converting e-commerce web storefronts, SaaS communication platforms, and digital products.',
+      items: [
+        'E-commerce Websites & Storefronts',
+        'Business & Corporate Websites',
+        'Voice Sending Notification Platform',
+        'Digital Marketing Tools & Automations',
+        'Custom Web & Digital Solutions',
+      ],
+      businessNeeds:
+        'Companies transitioning manual operations or sales channels into fast, automated, responsive digital solutions.',
+      ctaText: 'Discuss Your Digital Solution',
+      featuredInHome: true,
+    },
+  ],
+  caseStudies: [
+    {
+      id: 'cs-law-matter',
+      slug: 'the-law-matter',
+      client: 'The Law Matter',
+      industry: 'Legal / Professional Services',
+      title: 'Complete Video Production & Multichannel Social Workflow',
+      challenge:
+        'Legal concepts are complex and frequently misunderstood. The Law Matter required an authoritative digital broadcast workflow to produce consistent, high-retention legal education videos without placing logistical shooting burdens on the legal team.',
+      approach:
+        'Engineered an in-studio production workflow encompassing pre-production outlines, on-camera coaching, multi-angle lighting, high-fidelity audio capture, and rapid post-production editing optimized for YouTube and Facebook algorithms.',
+      services: [
+        'Video Shooting',
+        'Video Editing',
+        'Thumbnail Design',
+        'YouTube Management',
+        'Facebook Management',
+        'Content Publishing',
+      ],
+      execution:
+        'Top Spark manages the complete end-to-end content production and distribution cycle: studio shoot scheduling, multi-camera capture, high-contrast thumbnail packaging, and systematic weekly publishing across Facebook and YouTube.',
+      deliverables: [
+        'Studio Video Production & Lighting Setup',
+        'High-Retention Video Editing & Motion Graphics',
+        'Custom Click-Optimized Thumbnails',
+        'Weekly Video Scheduling & Optimization',
+        'Audience Feedback & Inquiry Routing',
+      ],
+      outcome:
+        'Established The Law Matter as a prominent digital legal authority in Bangladesh with a dependable weekly production pipeline and cohesive branding across video channels.',
+      image: '/images/video_production_lawmatter.jpg',
+      altText: 'The Law Matter video recording studio with cinema camera and lighting equipment',
+      status: 'published',
+      sortOrder: 1,
+      seoTitle: 'The Law Matter Case Study | Top Spark Digital',
+      metaDescription:
+        'How Top Spark manages complete studio video production, editing, thumbnails, and publishing for legal advisory platform The Law Matter.',
+    },
+    {
+      id: 'cs-voice-sending',
+      slug: 'voice-sending',
+      client: 'Voice Sending',
+      industry: 'Education Technology / Communication SaaS',
+      title: 'SaaS Positioning & Direct Institutional Outreach Content',
+      challenge:
+        'School administrators receive hundreds of emails that go unread by parents. Voice Sending needed a clear visual communication strategy to demonstrate how automated audio voice notices achieve near 100% parental message delivery.',
+      approach:
+        'Developed a targeted product explainer strategy, interactive demo previews, and educational case content tailored specifically to school directors and institutional principals.',
+      services: ['Content Strategy', 'Video Content', 'Social Media Marketing', 'Product Marketing'],
+      execution:
+        'Produced software walkthrough reels, administrative use-case explainers, and targeted B2B collateral demonstrating the software’s intuitive interface and parent receipt metrics.',
+      deliverables: [
+        'Product Explainer Video Series',
+        'SaaS UI Showcase Collateral',
+        'Institutional Brochure Assets',
+        'Facebook & LinkedIn Outreach Content',
+      ],
+      outcome:
+        'Clarified the SaaS value proposition for educational institutions across Dhaka and regional districts, significantly streamlining the onboarding sales cycle.',
+      image: '/images/voice_sending_product.jpg',
+      altText: 'Voice Sending school voice notification platform interface on laptop display',
+      status: 'published',
+      sortOrder: 2,
+      seoTitle: 'Voice Sending Case Study | Top Spark Digital',
+      metaDescription:
+        'Product positioning, video explainers, and marketing execution for school voice communication SaaS platform Voice Sending.',
+    },
+    {
+      id: 'cs-aalo',
+      slug: 'aalo',
+      client: 'Aalo',
+      industry: 'Education Technology',
+      title: 'EdTech Brand Building & Organic Search Foundations',
+      challenge:
+        'In a crowded educational market, Aalo sought to establish genuine brand credibility and long-term organic discovery among students, parents, and educators.',
+      approach:
+        'Formulated a comprehensive content matrix combining educational reels, structured study tips, and technical SEO foundations aligned with modern AEO practices.',
+      services: [
+        'Social Media Marketing',
+        'Content Creation',
+        'Video Production',
+        'Digital Marketing',
+        'SEO & AEO Strategy',
+      ],
+      execution:
+        'Deployed a consistent weekly publishing rhythm of short-form educational videos alongside keyword-targeted learning guides optimized for search discovery.',
+      deliverables: [
+        'Educational Reel Content Planning',
+        'Visual Identity Templates for Social Posts',
+        'On-page Semantic SEO Structure',
+        'Community Response Protocols',
+      ],
+      outcome:
+        'Built a recognized digital brand identity in the EdTech ecosystem with consistent community engagement and durable search presence.',
+      image: '/images/hero_production_agency.jpg',
+      altText: 'Digital production studio camera setup for educational content recording',
+      status: 'published',
+      sortOrder: 3,
+      seoTitle: 'Aalo EdTech Case Study | Top Spark Digital',
+      metaDescription:
+        'Digital brand building, content creation, and search strategy for educational technology platform Aalo.',
+    },
+    {
+      id: 'cs-growup',
+      slug: 'growup',
+      client: 'GrowUp',
+      industry: 'Agro & Investment',
+      title: 'Visual Proof & Trust-Building for Agricultural Initiatives',
+      challenge:
+        'Agro-investment initiatives require deep investor trust. Potential partners needed unvarnished visual transparency of farm operations, project milestones, and field execution.',
+      approach:
+        'Implemented an on-site documentary video production model, capturing real agricultural facilities, harvest cycles, and management operations.',
+      services: [
+        'Social Media Marketing',
+        'Content Strategy',
+        'Video Production',
+        'Facebook Advertising',
+        'Google Business Profile',
+      ],
+      execution:
+        'Conducted regular on-site video capture at project locations, packaging farm updates into transparent social broadcasts and verified Google Business Profile updates.',
+      deliverables: [
+        'On-Site Farm Video Documentation',
+        'Project Progress Reels',
+        'Google Maps & Location Verification',
+        'Targeted Facebook Campaign Assets',
+      ],
+      outcome:
+        'Established transparent visual documentation that dramatically reinforced stakeholder confidence and direct inquiries.',
+      image: '/images/hero_production_agency.jpg',
+      altText: 'On-location video production equipment and recording for agricultural project',
+      status: 'published',
+      sortOrder: 4,
+      seoTitle: 'GrowUp Agro Case Study | Top Spark Digital',
+      metaDescription:
+        'On-site video production and digital brand management for agricultural initiative GrowUp.',
+    },
+    {
+      id: 'cs-drwala',
+      slug: 'drwala',
+      client: 'DrWala',
+      industry: 'Healthcare Technology',
+      title: 'Accessible Healthcare Awareness & Digital Platform Visibility',
+      challenge:
+        'Connecting patients with reliable health consultations demands sensitive, clear, and reassuring medical awareness content that respects healthcare guidelines.',
+      approach:
+        'Structured an awareness-first content pipeline featuring physician tips, digital appointment explainers, and AI-assisted health awareness videos.',
+      services: ['Awareness Content', 'AI Video Content', 'Social Media Marketing', 'Digital Marketing'],
+      execution:
+        'Created digestible medical awareness snippets and patient walkthroughs that demystify digital health consultations for patients across Bangladesh.',
+      deliverables: [
+        'Healthcare Awareness Video Scripts & Editing',
+        'Patient Walkthrough Graphics',
+        'Social Media Campaign Calendar',
+      ],
+      outcome:
+        'Enhanced patient confidence and platform familiarity through clear, evidence-based visual communication.',
+      image: '/images/hero_production_agency.jpg',
+      altText: 'Studio production lighting and monitoring for health tech awareness video',
+      status: 'published',
+      sortOrder: 5,
+      seoTitle: 'DrWala Healthcare Case Study | Top Spark Digital',
+      metaDescription:
+        'Healthcare awareness video production and social marketing for health tech platform DrWala.',
+    },
+    {
+      id: 'cs-royal-valley',
+      slug: 'the-royal-valley',
+      client: 'The Royal Valley',
+      industry: 'Agro Tourism / Real Estate',
+      title: 'Immersive Visual Storytelling for Destination Hospitality',
+      challenge:
+        'Capturing the natural atmosphere and hospitality experience of a destination property through digital screens to drive weekend bookings and inquiries.',
+      approach:
+        'High-resolution landscape photography, ambient drone visuals, and short-form hospitality reels designed to showcase the physical beauty of the resort.',
+      services: ['Content Production', 'Social Media Management', 'Video & Photo', 'Digital Marketing'],
+      execution:
+        'Executed dedicated photo and video capture sessions capturing natural scenery, guest amenities, and sunset vistas for active social campaigns.',
+      deliverables: [
+        'High-Resolution Destination Photography',
+        'Atmospheric Video Reels & Walkthroughs',
+        'Seasonal Booking Campaign Creatives',
+      ],
+      outcome:
+        'Substantially elevated visual prestige and generated a consistent stream of direct visitor inquiries through Facebook and Instagram.',
+      image: '/images/hero_production_agency.jpg',
+      altText: 'Professional camera rig used for destination and agro-tourism video production',
+      status: 'published',
+      sortOrder: 6,
+      seoTitle: 'The Royal Valley Case Study | Top Spark Digital',
+      metaDescription:
+        'Visual hospitality storytelling, video production, and social marketing for The Royal Valley.',
+    },
+  ],
+  products: [
+    {
+      id: 'prod-voice-sending',
+      slug: 'voice-sending',
+      name: 'Voice Sending',
+      shortTagline: 'Parent voice communication system built for schools and educational institutions',
+      description:
+        'A school communication solution that helps educational institutions communicate directly with parents through automated voice messages, achieving near 100% receipt rates compared to traditional text notices.',
+      features: [
+        'Automated Voice Message Broadcasts to Parent Phone Numbers',
+        'Pre-Recorded Notices for Emergency Weather, Fees & School Events',
+        'Targeted Class & Section Group Distribution',
+        'Delivery Receipt Confirmation & Call Duration Logs',
+        'Intuitive Bengali & English Audio Scheduling Interface',
+        'Secure Cloud Dashboard with School Admin Controls',
+      ],
+      image: '/images/voice_sending_product.jpg',
+      ctaLabel: 'Enquire About Voice Sending',
+      ctaDestination: '/contact?product=voice-sending',
+      status: 'published',
+    },
+    {
+      id: 'prod-ecommerce-store',
+      slug: 'ecommerce-website',
+      name: 'E-commerce Website Solution',
+      shortTagline: 'High-performance digital storefronts built for growing retail and wholesale businesses',
+      description:
+        'Professional, custom-tailored e-commerce websites designed for Bangladeshi businesses that want to sell online with local payment gateways, courier integration, and mobile-first shopping experiences.',
+      features: [
+        'Ultra-Fast Mobile-First Product Browsing & Instant Checkout',
+        'Local Payment Gateway Integration (bKash, Nagad, Cards)',
+        'Automated Courier & Delivery Partner API Sync (Pathao, Steadfast)',
+        'Inventory Tracking, Stock Alerts & Order Management',
+        'Customer WhatsApp Quick Order & Automated Status Notifications',
+        'Integrated Search Engine & AI Search Optimization',
+      ],
+      image: '/images/ecommerce_product_store.jpg',
+      ctaLabel: 'Build Your Store',
+      ctaDestination: '/contact?service=Website',
+      status: 'published',
+    },
+  ],
+  testimonials: [], // Kept empty until approved by owner as per prompt instructions
+  teamMembers: [], // Kept empty until verified team data & photos are supplied
+  blogPosts: [
+    {
+      id: 'post-aeo-guide',
+      slug: 'what-is-aeo-and-how-it-differs-from-seo',
+      title: 'What is Answer Engine Optimization (AEO) and Why It Matters in Bangladesh',
+      excerpt:
+        'Understanding how AI search engines like Perplexity, ChatGPT Search, and Gemini index business knowledge differently than traditional Google blue links.',
+      content:
+        'As AI-powered answer engines continue to gain market share, businesses must structure their digital information for direct semantic retrieval...',
+      status: 'draft', // Draft status, blog is publicly hidden as requested
+    },
+  ],
+};

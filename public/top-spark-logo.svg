@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Brand Circular Violet Mark -->
+  <g transform="translate(10, 8)">
+    <circle cx="32" cy="32" r="30" fill="#6A22F2"/>
+    <!-- Three Growth Bars -->
+    <path d="M21 27 L21 38 L26 38 L26 27 Z" fill="#FFFFFF"/>
+    <path d="M29 17 L29 35 L34 35 L34 17 Z" fill="#FFFFFF"/>
+    <path d="M37 9 L37 32 L42 32 L42 9 Z" fill="#FFFFFF"/>
+    <!-- Dynamic Lightning / Growth Arrow -->
+    <path d="M14 43 L24 34 L32 41 L43 25" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M34 24 L46 22 L47 34" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- TOP SPARK Brand Typography -->
+  <text x="86" y="47" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="0.18em" fill="#6A22F2">
+    TOP SPARK
+  </text>
+</svg>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Gracefully prevent unhandled WebSocket / HMR rejections in preview sandbox environments
+      window.addEventListener('unhandledrejection', function(event) {
+        var str = String(event.reason || '') + ' ' + String(event.reason?.stack || '');
+        if (str.includes('WebSocket') || str.includes('@vite/client') || str.includes('createWebSocketModuleRunnerTransport')) {
+          event.preventDefault();
+        }
+      });
+      window.addEventListener('error', function(event) {
+        var msg = String(event.message || '') + ' ' + String(event.filename || '');
+        if (msg.includes('WebSocket') || msg.includes('@vite/client')) {
+          event.preventDefault();
+        }
+      }, true);
+    </script>
+    <script>
+      // Single Page App redirect restoration for GitHub Pages and static hosts
+      (function(l) {
+        try {
+          if (l.search && l.search[1] === '/' ) {
+            var decoded = l.search.slice(1).split('&').map(function(s) { 
+              return s.replace(/~and~/g, '&');
+            }).join('?');
+            var base = l.pathname.endsWith('/') ? l.pathname.slice(0, -1) : l.pathname;
+            window.history.replaceState(null, null,
+                base + decoded + l.hash
+            );
+          }
+        } catch (e) {
+          console.warn('[SPA] Redirect restoration bypassed:', e);
+        }
+      }(window.location));
+    </script>
+    <meta name="theme-color" content="#090A0F" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Top Spark | Digital Marketing, Content & Technology Agency in Bangladesh</title>
+    <meta
+      name="description"
+      content="Top Spark helps businesses grow through social media management, content creation, photography, videography, Google Business Profile, SEO, AEO and digital solutions in Bangladesh."
+    />
+    <link rel="canonical" href="https://topsparkdigital.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://topsparkdigital.com/" />
+    <meta property="og:title" content="Top Spark | Digital Marketing, Content & Technology Agency in Bangladesh" />
+    <meta
+      property="og:description"
+      content="Top Spark helps businesses grow through social media management, content creation, photography, videography, Google Business Profile, SEO, AEO and digital solutions in Bangladesh."
+    />
+    <meta property="og:site_name" content="Top Spark Digital" />
+    <meta property="og:image" content="https://topsparkdigital.com/og-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://topsparkdigital.com/" />
+    <meta name="twitter:title" content="Top Spark | Digital Marketing, Content & Technology Agency in Bangladesh" />
+    <meta
+      name="twitter:description"
+      content="Top Spark helps businesses grow through social media management, content creation, photography, videography, Google Business Profile, SEO, AEO and digital solutions in Bangladesh."
+    />
+    <meta name="twitter:image" content="https://topsparkdigital.com/og-image.png" />
+
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="./logo-mark.svg" />
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://topsparkdigital.com/#organization",
+            "name": "Top Spark Digital",
+            "url": "https://topsparkdigital.com/",
+            "logo": "https://topsparkdigital.com/logo-mark.svg",
+            "email": "info@topsparkdigital.com",
+            "telephone": "+8801674451806",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "131/2 A, Mirpur-1",
+              "addressLocality": "Dhaka",
+              "addressCountry": "BD"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://topsparkdigital.com/#service",
+            "name": "Top Spark Digital",
+            "url": "https://topsparkdigital.com/",
+            "telephone": "+8801674451806",
+            "email": "info@topsparkdigital.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "131/2 A, Mirpur-1",
+              "addressLocality": "Dhaka",
+              "addressCountry": "BD"
+            },
+            "priceRange": "$$",
+            "areaServed": "Bangladesh"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#090A0F] text-slate-100 antialiased selection:bg-purple-600 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>
+
