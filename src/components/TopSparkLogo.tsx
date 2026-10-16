@@ -20,29 +20,25 @@ export const TopSparkLogo: React.FC<TopSparkLogoProps> = ({
   return (
     <div className={`inline-flex items-center ${sizeClasses.gap} select-none ${className}`}>
       {/* Exact circular emblem based on the supplied brand logo */}
-      <div className={`relative ${sizeClasses.icon} shrink-0 rounded-full bg-[#6A22F2] flex items-center justify-center shadow-lg shadow-purple-900/30 overflow-hidden`}>
+      <div className={`relative ${sizeClasses.icon} shrink-0 rounded-full flex items-center justify-center shadow-lg shadow-purple-900/30 overflow-visible`}>
         <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-          {/* Three Growth Bar Columns */}
-          <rect x="34" y="38" width="7" height="19" rx="1" fill="#FFFFFF" />
-          <rect x="45" y="24" width="7" height="33" rx="1" fill="#FFFFFF" />
-          <rect x="56" y="13" width="7" height="44" rx="1" fill="#FFFFFF" />
+          {/* Brand Circular Violet Background */}
+          <circle cx="50" cy="50" r="46" fill="#6A22F2" />
 
-          {/* Upward Growth Lightning Arrow */}
+          {/* Three Growth Bar Columns with Slanted Tops and Dynamic Bottom Cuts */}
+          {/* Bar 1 (Leftmost) */}
+          <path d="M34 46 L41 38 L41 64 L34 54 Z" fill="#FFFFFF" />
+
+          {/* Bar 2 (Middle) */}
+          <path d="M44 32 L51 24 L51 61 L44 69 Z" fill="#FFFFFF" />
+
+          {/* Bar 3 (Rightmost / Tallest) */}
+          <path d="M54 18 L61 10 L61 49 L54 57 Z" fill="#FFFFFF" />
+
+          {/* Dynamic Lightning / Upward Growth Arrow */}
           <path
-            d="M21 66 L36 52 L48 63 L68 38"
-            stroke="#FFFFFF"
-            strokeWidth="7"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          {/* Arrowhead Pointing Northeast */}
-          <path
-            d="M55 36 L72 34 L74 51"
-            fill="none"
-            stroke="#FFFFFF"
-            strokeWidth="7"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            d="M17 76 L32 55 L44 74 L62 54 L57 49 L81 43 L73 65 L67 59 L44 87 L30 64 Z"
+            fill="#FFFFFF"
           />
         </svg>
       </div>

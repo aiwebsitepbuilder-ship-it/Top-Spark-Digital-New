@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <!-- Brand Circular Violet Background -->
-  <circle cx="50" cy="50" r="48" fill="#6A22F2"/>
-  
-  <!-- Three Growth Bars -->
-  <!-- Bar 1 (Left) -->
-  <path d="M34 40 L34 58 L42 58 L42 40 Z" fill="#FFFFFF"/>
+  <circle cx="50" cy="50" r="46" fill="#6A22F2"/>
+
+  <!-- Three Growth Bars with Slanted Tops and Dynamic Bottom Cuts -->
+  <!-- Bar 1 (Leftmost) -->
+  <path d="M34 46 L41 38 L41 64 L34 54 Z" fill="#FFFFFF"/>
+
   <!-- Bar 2 (Middle) -->
-  <path d="M46 25 L46 54 L54 54 L54 25 Z" fill="#FFFFFF"/>
-  <!-- Bar 3 (Right) -->
-  <path d="M58 14 L58 50 L66 50 L66 14 Z" fill="#FFFFFF"/>
-  
-  <!-- Dynamic Lightning / Growth Arrow -->
-  <!-- Slices from bottom-left up, down slightly, then shoots up northeast with arrowhead -->
-  <path d="M22 66 L38 52 L50 63 L68 39" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Arrowhead pointing up-right -->
-  <path d="M54 37 L72 35 L74 53" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 32 L51 24 L51 61 L44 69 Z" fill="#FFFFFF"/>
+
+  <!-- Bar 3 (Rightmost / Tallest) -->
+  <path d="M54 18 L61 10 L61 49 L54 57 Z" fill="#FFFFFF"/>
+
+  <!-- Dynamic Lightning / Upward Growth Arrow -->
+  <!-- Sharp tail protruding on left, rises to apex, dips into V-valley, shoots up as bold northeast arrowhead -->
+  <path d="M17 76 L32 55 L44 74 L62 54 L57 49 L81 43 L73 65 L67 59 L44 87 L30 64 Z" fill="#FFFFFF"/>
 </svg>
