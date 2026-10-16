@@ -44,14 +44,14 @@ const linkMatches = html.match(/href="([^"]+\.css)"/g) || [];
 
 for (const match of [...scriptMatches, ...linkMatches]) {
   const url = match.match(/(?:src|href)="([^"]+)"/)[1];
-  if (url.startsWith('/Top-Spark-Digital/assets/')) {
-    const relFile = url.replace('/Top-Spark-Digital/', 'dist/');
-    const assetPath = path.join(projectRoot, relFile);
+  if (url.includes('/assets/')) {
+    const assetSubpath = url.slice(url.indexOf('/assets/') + 1);
+    const assetPath = path.join(distDir, assetSubpath);
     if (!fs.existsSync(assetPath)) {
-      console.error(`[verify-build] FAILED: Asset referenced in HTML does not exist: ${relFile}`);
+      console.error(`[verify-build] FAILED: Asset referenced in HTML does not exist: ${assetSubpath}`);
       process.exit(1);
     }
-    console.log(`  ✓ Verified asset: ${relFile}`);
+    console.log(`  ✓ Verified asset: dist/${assetSubpath}`);
   }
 }
 

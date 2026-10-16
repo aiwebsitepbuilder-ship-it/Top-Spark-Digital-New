@@ -7,7 +7,10 @@ import { defineConfig } from 'vite';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(() => {
-  const base = process.env.VITE_BASE_PATH || '/Top-Spark-Digital/';
+  // Set base path for GitHub Pages repository (https://<user>.github.io/<repo>/)
+  // Automatically detects repository name in GitHub Actions or defaults to /Top-Spark-Digital-New/
+  const base = process.env.VITE_BASE_PATH || 
+    (process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` : '/Top-Spark-Digital-New/');
 
   return {
     base,
